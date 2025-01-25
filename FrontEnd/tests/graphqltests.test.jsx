@@ -77,8 +77,7 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 
 
 
-const GRAPHQL_ENDPOINT = "http://localhost:5193/graphql"
-
+const GRAPHQL_ENDPOINT = "http://backend:5193/graphql";
 
 // Create a mock client with MockLink
 function createMockClient(mocks) {
