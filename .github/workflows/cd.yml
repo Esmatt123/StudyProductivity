@@ -1,0 +1,43 @@
+name: CD
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    branches: [main]
+    types: 
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    
+    steps:
+    - uses: actions/checkout@v2
+
+    # Login to Docker Registry
+    - name: Login to Container Registry
+      uses: docker/login-action@v2
+      with:
+        registry: studyprodcontainerregister.azurecr.io
+        username: ${{ secrets.ACR_USERNAME }}
+        password: ${{ secrets.ACR_PASSWORD }}
+
+    # Build and push to ACR
+    - name: Build and push containers
+      run: |
+        docker-compose build
+        docker-compose push
+
+    # Deploy to Azure Web Apps
+    - name: Deploy Frontend
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: studyproductivityapp-frontend-c7g8fed7c8ebhha4
+        images: studyprodcontainerregister.azurecr.io/frontend:latest
+
+    - name: Deploy Backend
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: studyproductivityapp-backend-c7g8fed7c8ebhha4
+        images: studyprodcontainerregister.azurecr.io/backend:latest

@@ -25,7 +25,7 @@ jobs:
     - name: Run Frontend Tests
       working-directory: ./FrontEnd
       env:
-        NEXT_PUBLIC_VITE_BACKEND_URL: http://backend:5193
+        NEXT_PUBLIC_VITE_BACKEND_URL: studyproductivityapp-backend-bpc4cxfhctgqgeev.polandcentral-01.azurewebsites.net
       run: npm test
 
     # Backend Tests
@@ -43,17 +43,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    # Login to Azure
-    - name: Azure Login
-      uses: azure/login@v1
+    # Login to Docker Registry
+    - name: Login to Container Registry
+      uses: docker/login-action@v2
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-    # Login to ACR
-    - name: Login to ACR
-      uses: azure/docker-login@v1
-      with:
-        login-server: studyprodcontainerregister.azurecr.io
+        registry: studyprodcontainerregister.azurecr.io
         username: ${{ secrets.ACR_USERNAME }}
         password: ${{ secrets.ACR_PASSWORD }}
 
