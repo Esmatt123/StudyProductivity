@@ -9,7 +9,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - NEXT_PUBLIC_API_URL=http://backend:5193
+      - NEXT_PUBLIC_API_URL=studyproductivityapp-backend-bpc4cxfhctgqgeev.polandcentral-01.azurewebsites.net
     depends_on:
       - backend
 
