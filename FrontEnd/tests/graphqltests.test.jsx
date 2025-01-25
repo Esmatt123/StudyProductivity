@@ -265,7 +265,7 @@ describe('getAllDocuments', () => {
     const [url, options] = fetch.mock.calls[0];
     const body = JSON.parse(options.body);
 
-    expect(url).toBe('http://localhost:5193/graphql');
+    expect(url).toBe(GRAPHQL_ENDPOINT);
     expect(options.method).toBe('POST');
     expect(options.headers).toEqual({
       'Content-Type': 'application/json',
@@ -323,7 +323,7 @@ describe('getAllDocuments', () => {
       const [url, options] = fetch.mock.calls[0];
       const body = JSON.parse(options.body);
 
-      expect(url).toBe('http://localhost:5193/graphql');
+      expect(url).toBe(GRAPHQL_ENDPOINT);
       expect(options.method).toBe('POST');
       expect(options.headers).toEqual({
         'Content-Type': 'application/json',
@@ -381,7 +381,7 @@ describe('getAllDocuments', () => {
       const [url, options] = fetch.mock.calls[0];
       const body = JSON.parse(options.body);
 
-      expect(url).toBe('http://localhost:5193/graphql');
+      expect(url).toBe(GRAPHQL_ENDPOINT);
       expect(options.method).toBe('POST');
       expect(options.headers).toEqual({
         'Content-Type': 'application/json',
@@ -616,7 +616,7 @@ describe('createOrFindDocument', () => {
     const [url, options] = fetch.mock.calls[0];
     const body = JSON.parse(options.body);
 
-    expect(url).toBe('http://localhost:5193/graphql');
+    expect(url).toBe(GRAPHQL_ENDPOINT);
     expect(options.method).toBe('POST');
     expect(options.headers).toEqual({
       'Content-Type': 'application/json',
