@@ -24,6 +24,8 @@ jobs:
     
     - name: Run Frontend Tests
       working-directory: ./FrontEnd
+      env:
+        NEXT_PUBLIC_VITE_BACKEND_URL: http://backend:5193
       run: npm test
 
     # Backend Tests
