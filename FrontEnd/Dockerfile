@@ -16,10 +16,6 @@ RUN npm cache clean --force && \
 # Copy the rest of the frontend code
 COPY FrontEnd/ .
 
-# Set environment variables
-ENV NEXT_TELEMETRY_DISABLED=1
-ENV NODE_ENV=production
-
 # Build with verbose output and error handling
 RUN npm run build || (cat .next/error.log && exit 1)
 
@@ -33,9 +29,6 @@ COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/node_modules ./node_modules
-
-ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
 
 EXPOSE 3000
 
