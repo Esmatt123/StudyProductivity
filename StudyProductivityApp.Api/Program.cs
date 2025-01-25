@@ -311,8 +311,8 @@ builder.Services.AddCors(options =>
         {
             builder
                 .WithOrigins(
-                    "studyproductivityapp-backend-bpc4cxfhctgqgeev.polandcentral-01.azurewebsites.net",
-                    "studyproductivityapp-frontend-c7g8fed7c8ebhha4.polandcentral-01.azurewebsites.net"
+                    "https://studyproductivityapp-backend-bpc4cxfhctgqgeev.polandcentral-01.azurewebsites.net",
+                    "https://studyproductivityapp-frontend-c7g8fed7c8ebhha4.polandcentral-01.azurewebsites.net"
                 )
                 .AllowAnyHeader()
                 .AllowAnyMethod()
