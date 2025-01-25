@@ -35,6 +35,14 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions
     WebRootPath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")
 });
 
+var logger = LoggerFactory.Create(builder => 
+{
+    builder
+        .AddConsole()
+        .AddDebug()
+        .SetMinimumLevel(LogLevel.Information);
+}).CreateLogger<Program>();
+
 var keyVaultUrl = Environment.GetEnvironmentVariable("KEY_VAULT_URL");
 
 var credential = new ClientSecretCredential(
@@ -47,10 +55,10 @@ var credential = new ClientSecretCredential(
     }
 );
 
-Console.WriteLine("TENANT ID: ", Environment.GetEnvironmentVariable("AZURE_TENANT_ID"));
-Console.WriteLine("CLIENT ID: ", Environment.GetEnvironmentVariable("AZURE_CLIENT_ID"));
-Console.WriteLine("GIT TEST: ", Environment.GetEnvironmentVariable("GIT_TEST"));
-Console.WriteLine("APPSERVICE TEST: ", Environment.GetEnvironmentVariable("APP_SERVICE_TEST"));
+logger.LogInformation($"TENANT ID: {Environment.GetEnvironmentVariable("AZURE_TENANT_ID")}");
+logger.LogInformation($"CLIENT ID: {Environment.GetEnvironmentVariable("AZURE_CLIENT_ID")}");
+logger.LogInformation($"GIT TEST: {Environment.GetEnvironmentVariable("GIT_TEST")}");
+logger.LogInformation($"APPSERVICE TEST: {Environment.GetEnvironmentVariable("APP_SERVICE_TEST")}");
 
 
 
