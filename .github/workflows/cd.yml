@@ -32,12 +32,6 @@ jobs:
         username: ${{ secrets.ACR_USERNAME }}
         password: ${{ secrets.ACR_PASSWORD }}
 
-    # Build and push to ACR
-    - name: Build and push containers
-      run: |
-        docker compose build
-        docker compose push
-
     # Login to Azure (needed for Web App deployment)
     - name: Azure Login
       uses: azure/login@v1
@@ -48,11 +42,11 @@ jobs:
     - name: Deploy Frontend
       uses: azure/webapps-deploy@v2
       with:
-        app-name: studyproductivityapp-frontend-c7g8fed7c8ebhha4
+        app-name: studyproductivityapp-frontend
         images: studyprodcontainerregister.azurecr.io/frontend:latest
 
     - name: Deploy Backend
       uses: azure/webapps-deploy@v2
       with:
-        app-name: studyproductivityapp-backend-bpc4cxfhctgqgeev
+        app-name: studyproductivityapp-backend
         images: studyprodcontainerregister.azurecr.io/backend:latest
