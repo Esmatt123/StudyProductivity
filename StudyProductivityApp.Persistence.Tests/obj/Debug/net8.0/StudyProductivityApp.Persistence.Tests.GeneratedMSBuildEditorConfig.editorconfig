@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = StudyProductivityApp.Persistence.Tests
-build_property.ProjectDir = C:\Users\esmat\StudyProductivityApp\studyproductivityapp.persistence.tests\
+build_property.ProjectDir = C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence.Tests\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
