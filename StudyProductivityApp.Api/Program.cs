@@ -35,6 +35,51 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions
     WebRootPath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")
 });
 
+var keyVaultUrl = Environment.GetEnvironmentVariable("KEY_VAULT_URL");
+
+var credential = new ClientSecretCredential(
+    tenantId: Environment.GetEnvironmentVariable("AZURE_TENANT_ID"),
+    clientId: Environment.GetEnvironmentVariable("AZURE_CLIENT_ID"),
+    clientSecret: Environment.GetEnvironmentVariable("AZURE_CLIENT_SECRET"),
+    new TokenCredentialOptions
+    {
+        AuthorityHost = AzureAuthorityHosts.AzurePublicCloud
+    }
+);
+
+Console.WriteLine("TENANT ID: ", Environment.GetEnvironmentVariable("AZURE_TENANT_ID"));
+Console.WriteLine("CLIENT ID: ", Environment.GetEnvironmentVariable("AZURE_CLIENT_ID"));
+Console.WriteLine("GIT TEST: ", Environment.GetEnvironmentVariable("GIT_TEST"));
+Console.WriteLine("APPSERVICE TEST: ", Environment.GetEnvironmentVariable("APP_SERVICE_TEST"));
+
+
+
+
+var secretClient = new SecretClient(
+    new Uri(keyVaultUrl),
+    credential,
+    new SecretClientOptions()
+    {
+        Retry =
+        {
+            Delay = TimeSpan.FromSeconds(2),
+            MaxDelay = TimeSpan.FromSeconds(16),
+            MaxRetries = 5,
+            Mode = RetryMode.Exponential
+        }
+    }
+);
+
+builder.Configuration.AddAzureKeyVault(
+    secretClient,
+    new AzureKeyVaultConfigurationOptions
+    {
+        ReloadInterval = TimeSpan.FromMinutes(5)
+    }
+
+
+);
+
 // At the start of your configuration
 builder.Configuration
     .SetBasePath(builder.Environment.ContentRootPath)
@@ -65,45 +110,7 @@ if (File.Exists(envPath))
     DotEnv.Load(options: new DotEnvOptions(envFilePaths: new[] { envPath }));
 }
 
-var keyVaultUrl = Environment.GetEnvironmentVariable("KEY_VAULT_URL");
 
-var credential = new ClientSecretCredential(
-    tenantId: Environment.GetEnvironmentVariable("AZURE_TENANT_ID"),
-    clientId: Environment.GetEnvironmentVariable("AZURE_CLIENT_ID"),
-    clientSecret: Environment.GetEnvironmentVariable("AZURE_CLIENT_SECRET"),
-    new TokenCredentialOptions
-    {
-        AuthorityHost = AzureAuthorityHosts.AzurePublicCloud
-    }
-);
-
-
-
-
-var secretClient = new SecretClient(
-    new Uri(keyVaultUrl),
-    credential,
-    new SecretClientOptions()
-    {
-        Retry =
-        {
-            Delay = TimeSpan.FromSeconds(2),
-            MaxDelay = TimeSpan.FromSeconds(16),
-            MaxRetries = 5,
-            Mode = RetryMode.Exponential
-        }
-    }
-);
-
-builder.Configuration.AddAzureKeyVault(
-    secretClient,
-    new AzureKeyVaultConfigurationOptions
-    {
-        ReloadInterval = TimeSpan.FromMinutes(5)
-    }
-
-
-);
 
 
 
