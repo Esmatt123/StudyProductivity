@@ -1,0 +1,25 @@
+.chatPage {
+    display: flex;
+    height: 100vh;
+    .sidebar {
+      width: 300px;
+      transition: width 0.3s;
+    }
+    .chatWindow {
+      flex: 1;
+      padding: 20px;
+    }
+    .emptyState {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: gray;
+    }
+  }
+  
+  .activeChatSidebar {
+    width: 100px; // Shrink sidebar when a chat is active
+  }
+  

@@ -1,0 +1,12 @@
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Core\bin\Debug\net8.0\StudyProductivityApp.Core.deps.json
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Core\bin\Debug\net8.0\StudyProductivityApp.Core.dll
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Core\bin\Debug\net8.0\StudyProductivityApp.Core.pdb
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Core\obj\Debug\net8.0\StudyProductivityApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Core\obj\Debug\net8.0\StudyProductivityApp.Core.AssemblyInfoInputs.cache
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Core\obj\Debug\net8.0\StudyProductivityApp.Core.AssemblyInfo.cs
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Core\obj\Debug\net8.0\StudyProductivityApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Core\obj\Debug\net8.0\StudyProductivityApp.Core.dll
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Core\obj\Debug\net8.0\refint\StudyProductivityApp.Core.dll
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Core\obj\Debug\net8.0\StudyProductivityApp.Core.pdb
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Core\obj\Debug\net8.0\ref\StudyProductivityApp.Core.dll
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Core\obj\Debug\net8.0\StudyProductivityApp.Core.csproj.AssemblyReference.cache

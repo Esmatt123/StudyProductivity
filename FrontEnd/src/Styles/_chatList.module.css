@@ -1,0 +1,298 @@
+.chatList {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: auto;
+  height: 100vh;
+  overflow-y: auto;
+}
+@media (max-width: 768px) {
+  .chatList {
+    max-width: 100%;
+    padding: 15px;
+    margin: 0;
+    height: calc(100vh - 70px);
+    border-radius: 0;
+  }
+}
+
+.header {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .header {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+.subHeader {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .subHeader {
+    font-size: 16px;
+  }
+}
+
+.friendsSection, .groupsSection {
+  margin-bottom: 20px;
+}
+
+.chatItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+@media (max-width: 768px) {
+  .chatItem {
+    padding: 12px;
+  }
+}
+.chatItem:active {
+  background-color: #e0e0e0;
+}
+.chatItem:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+.profileImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+@media (max-width: 768px) {
+  .profileImage {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.chatInfo {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.friendName {
+  font-weight: bold;
+  font-size: 16px;
+}
+@media (max-width: 768px) {
+  .friendName {
+    font-size: 14px;
+  }
+}
+
+.createGroupButton {
+  width: 100%;
+  padding: 12px;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  font-size: 16px;
+}
+@media (max-width: 768px) {
+  .createGroupButton {
+    padding: 10px;
+    font-size: 14px;
+    position: sticky;
+    bottom: 20px;
+    margin: 0 auto;
+    width: 90%;
+    -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+.createGroupButton:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1000;
+}
+@media (max-width: 768px) {
+  .modalOverlay {
+    padding: 15px;
+  }
+}
+
+.modal {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 768px) {
+  .modal {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+  }
+}
+
+.groupInput {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .groupInput {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+.checkboxContainer {
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 15px 0;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.checkboxItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px 0;
+}
+.checkboxItem label {
+  margin-left: 10px;
+  font-size: 14px;
+}
+.checkboxItem input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+}
+
+.menuContainer {
+  position: relative;
+}
+.menuContainer .menuButton {
+  padding: 8px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .menuContainer .menuButton {
+    padding: 12px;
+  }
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  z-index: 1000;
+}
+@media (max-width: 768px) {
+  .dropdownMenu {
+    width: 180px;
+  }
+  .dropdownMenu button {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+.addMemberDropdown {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  padding: 10px;
+}
+@media (max-width: 768px) {
+  .addMemberDropdown {
+    left: auto;
+    right: 100%;
+  }
+  .addMemberDropdown .friendButton {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .touchTarget {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  .scrollContainer {
+    -webkit-overflow-scrolling: touch;
+  }
+  .chatItem, .button {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+}

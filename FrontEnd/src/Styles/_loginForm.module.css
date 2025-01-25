@@ -1,0 +1,113 @@
+/* LoginForm.module.scss */
+/* Variables */
+.loginFormContainer {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 5px;
+  max-width: 400px;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.loginForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.loginForm .error {
+  color: #ff4d4f;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.loginForm .formGroup {
+  margin-bottom: 20px;
+}
+.loginForm .formGroup .label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+}
+.loginForm .formGroup .input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.loginForm .formGroup .input:focus {
+  outline: none;
+  border-color: #2d89ef;
+  -webkit-box-shadow: 0 0 0 2px rgba(45, 137, 239, 0.2);
+          box-shadow: 0 0 0 2px rgba(45, 137, 239, 0.2);
+}
+.loginForm .button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2d89ef;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+.loginForm .button:disabled {
+  background-color: #8cbef6;
+  cursor: not-allowed;
+}
+.loginForm .button:hover:not(:disabled) {
+  background-color: #106fd9;
+}
+
+.success {
+  color: green;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.userId {
+  margin-top: 10px;
+  text-align: center;
+  color: #333;
+}
+
+/* HomePage.module.scss */
+.homePage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  background-color: #f0f2f5;
+  padding: 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+  text-align: center;
+}

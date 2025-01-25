@@ -1,0 +1,469 @@
+/* Define a base style for all buttons */
+.button-base, .shareButton, .deleteButton, .updateButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Unique styles for each button */
+.updateButton {
+  background: #ffbb33;
+  color: white;
+}
+.updateButton:hover {
+  background: #ff8800;
+  color: white;
+}
+
+.deleteButton {
+  background: #ff4444;
+  color: white;
+}
+.deleteButton:hover {
+  background: #cc0000;
+  color: white;
+}
+
+.shareButton {
+  background: #33b5e5;
+  color: white;
+}
+.shareButton:hover {
+  background: #0099CC;
+  color: white;
+}
+
+.container {
+  padding: 2rem;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f8f9fa), to(#ffffff));
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+  min-height: 100vh;
+}
+
+.createButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: #4CAF50;
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 8px;
+}
+.createButton:hover {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.createButton:active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.createButton::before {
+  content: "+";
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.createButton:hover {
+  background: #45a049;
+}
+
+.documentGrid {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.documentCard {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.documentCard:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+.documentCard:hover .imageWrapper img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+.documentCard .imageWrapper {
+  position: relative;
+  overflow: hidden;
+}
+.documentCard .imageWrapper .image {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.documentCard .cardTitle {
+  color: #333;
+  font-size: 1.2rem;
+  margin: 1rem;
+  font-weight: 600;
+}
+.documentCard .cardDescription {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0.5rem 1rem;
+}
+
+.buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.buttonContainer .button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 80px;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+}
+.buttonContainer .button:hover {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.buttonContainer .button:active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.buttonContainer .button.update {
+  background: #ffbb33;
+  color: white;
+}
+.buttonContainer .button.update:hover {
+  background: #ff8800;
+}
+.buttonContainer .button.delete {
+  background: #ff4444;
+  color: white;
+}
+.buttonContainer .button.delete:hover {
+  background: #cc0000;
+}
+.buttonContainer .button.share {
+  background: #33b5e5;
+  color: white;
+}
+.buttonContainer .button.share:hover {
+  background: #0099CC;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1000;
+  -webkit-animation: fadeIn 0.3s ease;
+          animation: fadeIn 0.3s ease;
+}
+.modal .modalContent {
+  background: #ffffff;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 20px;
+  padding: 2rem;
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  -webkit-animation: slideIn 0.3s ease;
+          animation: slideIn 0.3s ease;
+  position: relative;
+}
+.modal .modalContent h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.modal .modalContent .modalInput {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #555;
+  outline: none;
+  -webkit-transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease;
+}
+.modal .modalContent .modalInput:focus {
+  border-color: #4CAF50;
+  -webkit-box-shadow: 0 0 4px rgba(76, 175, 80, 0.3);
+          box-shadow: 0 0 4px rgba(76, 175, 80, 0.3);
+}
+.modal .modalContent .modalButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.modal .modalContent .modalButtons .confirmButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: #4CAF50;
+  color: white;
+}
+.modal .modalContent .modalButtons .confirmButton:hover {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.modal .modalContent .modalButtons .confirmButton:active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.modal .modalContent .modalButtons .confirmButton:hover {
+  background: #45a049;
+}
+.modal .modalContent .modalButtons .cancelButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: #ff4444;
+  color: white;
+}
+.modal .modalContent .modalButtons .cancelButton:hover {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.modal .modalContent .modalButtons .cancelButton:active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.modal .modalContent .modalButtons .cancelButton:hover {
+  background: #cc0000;
+}
+.modal .modalContent .checkboxContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+.modal .modalContent .checkboxContainer p {
+  font-size: 1rem;
+  color: #555;
+}
+.modal .modalContent .checkboxContainer input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+  accent-color: #4CAF50;
+}
+.modal .modalContent .closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #888;
+  cursor: pointer;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.modal .modalContent .closeButton:hover {
+  color: #ff4444;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slideIn {
+  from {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideIn {
+  from {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.error {
+  background: #fff3f3;
+  color: #ff4444;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  border-left: 4px solid #ff4444;
+}
+
+.modalButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.confirmButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: #00C851;
+  color: white;
+}
+.confirmButton:hover {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.confirmButton:active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.confirmButton:hover {
+  background: #007E33;
+}
+
+.cancelButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: #eee;
+  color: #666;
+}
+.cancelButton:hover {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.cancelButton:active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.cancelButton:hover {
+  background: #ddd;
+}

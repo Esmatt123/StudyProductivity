@@ -1,0 +1,46 @@
+.folderItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #f8f9fa; /* Light background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15);
+    }
+  }
+  
+  .folderIcon {
+    width: 60px;
+    height: 60px;
+    background: url('/folder.png') no-repeat center center;
+    background-size: cover; /* Adjust based on your icon */
+  }
+  
+  .folderName {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .deleteButton{
+    border: none;
+    background-color: rgb(238, 79, 79);
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }

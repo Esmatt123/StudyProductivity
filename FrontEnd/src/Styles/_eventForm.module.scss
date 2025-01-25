@@ -1,0 +1,64 @@
+// Basic form styling
+.eventForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: auto;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  // Input fields
+  .eventForm input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border 0.3s ease-in-out;
+  }
+  
+  // Add focus effect
+  .eventForm input:focus {
+    border-color: #0070f3;
+    outline: none;
+  }
+  
+  // Button styling
+  .eventForm button {
+    background-color: #0070f3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  // Hover effect for the button
+  .eventForm button:hover {
+    background-color: #005bb5;
+  }
+  
+  // Responsive design for smaller screens
+  @media (max-width: 768px) {
+    .eventForm {
+      padding: 15px;
+      max-width: 100%;
+    }
+  }
+  
+
+  .suggestionsSelect {
+    width: 100%; /* Full width of the input */
+    padding: 8px; /* Add some padding */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 4px; /* Rounded corners */
+  }
+  

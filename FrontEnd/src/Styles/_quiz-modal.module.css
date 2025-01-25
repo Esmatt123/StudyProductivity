@@ -1,0 +1,255 @@
+/* Modal backdrop */
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  /* Dark background with increased opacity */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* Center modal vertically and horizontally */
+  z-index: 1000;
+  /* Ensure it's on top of other elements */
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Modal content box */
+.modalContent {
+  background-color: #fff;
+  width: 80%;
+  max-width: 800px;
+  max-height: 80vh;
+  /* Max height of the modal, 80% of the viewport */
+  min-height: 400px;
+  border-radius: 10px;
+  padding: 20px;
+  -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  /* Start off-screen */
+  -webkit-animation: slideIn 0.5s forwards;
+          animation: slideIn 0.5s forwards;
+  /* Apply the slide-in animation */
+  overflow-y: auto;
+  /* Allow vertical scrolling inside the modal */
+}
+
+/* Modal slide-in animation */
+@-webkit-keyframes slideIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+/* Content Block Styles (Questions, Answer Options) */
+.questionBlock {
+  margin-bottom: 20px;
+}
+
+.questionBlock .label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.questionBlock input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Answer Options */
+.answerOptionsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 10px;
+}
+
+.answerOptionBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+.answerOptionBlock .button {
+  background-color: #4CAF50;
+}
+.answerOptionBlock .removeOptionButton {
+  background-color: #f44336;
+}
+
+.answerOptionBlock input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-right: 10px;
+}
+
+.answerOptionBlock button {
+  padding: 5px 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.answerOptionBlock button.correct {
+  background-color: #2196F3;
+}
+
+.addOptionButton {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.addOptionButton:disabled {
+  cursor: default;
+}
+
+.addQuestionButton {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.titleInput {
+  border: none;
+  outline: none;
+  background-color: #d7eaf9;
+  border-radius: 5px;
+}
+
+.modalActions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modalActions button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modalActions .submitButton {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.modalActions .cancelButton {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Quiz Result Page Styles */
+.quizResult {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.quizResult .score {
+  font-size: 32px;
+  color: #4CAF50;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .modalContent {
+    width: 90%;
+    padding: 15px;
+  }
+  .label,
+  .answerOptionBlock {
+    font-size: 14px;
+  }
+  .input {
+    font-size: 14px;
+  }
+  .addOptionButton,
+  .addQuestionButton {
+    font-size: 14px;
+  }
+}
+.paginationButton {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.paginationButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.selectedAnswer {
+  background-color: #4caf50;
+  color: white;
+}
+
+.progressBar {
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+}

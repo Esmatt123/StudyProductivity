@@ -1,0 +1,17 @@
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\bin\Debug\net8.0\StudyProductivityApp.Persistence.deps.json
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\bin\Debug\net8.0\StudyProductivityApp.Persistence.runtimeconfig.json
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\bin\Debug\net8.0\StudyProductivityApp.Persistence.dll
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\bin\Debug\net8.0\StudyProductivityApp.Persistence.pdb
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\bin\Debug\net8.0\StudyProductivityApp.Core.dll
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\bin\Debug\net8.0\StudyProductivityApp.Core.pdb
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\obj\Debug\net8.0\StudyProductivityApp.Persistence.csproj.AssemblyReference.cache
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\obj\Debug\net8.0\StudyProductivityApp.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\obj\Debug\net8.0\StudyProductivityApp.Persistence.AssemblyInfoInputs.cache
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\obj\Debug\net8.0\StudyProductivityApp.Persistence.AssemblyInfo.cs
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\obj\Debug\net8.0\StudyProductivityApp.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\obj\Debug\net8.0\StudyPro.570BD595.Up2Date
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\obj\Debug\net8.0\StudyProductivityApp.Persistence.dll
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\obj\Debug\net8.0\refint\StudyProductivityApp.Persistence.dll
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\obj\Debug\net8.0\StudyProductivityApp.Persistence.pdb
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\obj\Debug\net8.0\StudyProductivityApp.Persistence.genruntimeconfig.cache
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\obj\Debug\net8.0\ref\StudyProductivityApp.Persistence.dll

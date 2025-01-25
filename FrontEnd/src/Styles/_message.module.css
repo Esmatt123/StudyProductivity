@@ -1,0 +1,57 @@
+.messageText {
+  margin: 0;
+}
+
+.messageContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 10px;
+}
+
+/* Sender name styling */
+.senderName {
+  font-size: 0.75rem;
+  /* Small text */
+  color: #888;
+  /* Lighter color for the name */
+  margin-bottom: 3px;
+  /* Space between the name and the message bubble */
+}
+
+/* Align sender name to the left for incoming messages */
+.incomingName {
+  text-align: left;
+}
+
+/* Align sender name to the right for outgoing messages */
+.outgoingName {
+  text-align: right;
+}
+
+/* Message bubble styling */
+.messageBubble {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 15px;
+  max-width: 60%;
+}
+
+/* Incoming message styling */
+.incoming {
+  background-color: #f1f1f1;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+/* Outgoing message styling */
+.outgoing {
+  background-color: #007bff;
+  color: white;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}

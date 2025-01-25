@@ -1,0 +1,425 @@
+.profilePage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-top: 1px solid red;
+  overflow: hidden;
+}
+
+.aboutSection,
+.eventsSection {
+  width: 100%;
+  margin: 20px 0;
+  text-align: center; /* Center text */
+  border-top: 1px solid grey;
+}
+
+.profileSection {
+  width: 100%;
+  margin: 20px 0;
+  text-align: center; /* Center text */
+}
+
+.profilePic img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.userInfo {
+  margin-top: 10px;
+}
+
+.aboutSection textarea {
+  width: 100%;
+  max-width: 600px;
+  margin: 10px auto;
+  display: block;
+}
+
+/* Add a class for buttons instead of targeting the global button element */
+.editAboutButton {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.editAboutButton:hover {
+  background-color: #005bb5;
+}
+
+.eventItem {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.eventsSection ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+.friendsList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  border-top: 1px solid grey;
+}
+.friendsList ul {
+  margin: 0;
+  padding: 0;
+}
+
+.friendsList {
+  margin: 20px 0;
+}
+
+.friendCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; /* Center the content horizontally */
+  width: 80px; /* Set a fixed width for the card */
+  border: 1px solid #ccc; /* Light border around the card */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px; /* Padding inside the card */
+  background-color: #fff; /* White background for the card */
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  margin: 10px; /* Space between cards */
+  text-align: center; /* Center the text */
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s; /* Animation for hover effect */
+}
+
+.friendCard:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05); /* Slightly enlarge the card on hover */
+}
+
+.friendImage {
+  border-radius: 50%; /* Make the image round */
+  margin-bottom: 5px; /* Space between image and name */
+}
+
+.friendName {
+  font-size: 14px; /* Adjust font size */
+  font-weight: bold; /* Make name bold */
+}
+
+.listedfriend {
+  list-style-type: none;
+}
+
+/* Events Section */
+.eventsSection {
+  width: 100%;
+  margin: 20px 0;
+  padding: 0 20px; /* Add some horizontal padding */
+  text-align: center;
+  border-top: 1px solid grey;
+}
+
+.eventsSection h2 {
+  margin-bottom: 20px;
+}
+
+/* Grid layout for events */
+.eventsGrid {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Event Card */
+.eventCard {
+  background-color: #fff; /* White background */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px; /* Padding inside the card */
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  -webkit-transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+  transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, -webkit-transform 0.2s, -webkit-box-shadow 0.2s; /* Animation for hover effect */
+  text-align: left; /* Left-align text inside cards */
+}
+
+.eventCard:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02); /* Slightly enlarge the card on hover */
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+/* Event Title */
+.eventTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Event Date */
+.eventDate {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Event Description */
+.eventDescription {
+  font-size: 16px;
+  color: #333;
+} /* Profile Page */
+.profilePage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+
+/* Profile Section */
+.profileSection {
+  width: 100%;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.profilePic img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.userInfo {
+  margin-top: 10px;
+}
+
+/* About Section */
+.aboutSection {
+  width: 100%;
+  margin: 20px 0;
+  text-align: center;
+  border-top: 1px solid grey;
+  padding-top: 20px;
+}
+
+.aboutSection textarea {
+  width: 100%;
+  max-width: 600px;
+  margin: 10px auto;
+  display: block;
+}
+
+/* Edit Button */
+.editAboutButton {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #0070f3; /* Primary color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.editAboutButton:hover {
+  background-color: #005bb5;
+}
+
+/* Events Section */
+.eventsSection {
+  width: 100%;
+  margin: 20px 0;
+  padding: 0 20px;
+  text-align: center;
+  border-top: 1px solid grey;
+  padding-top: 20px;
+}
+
+.eventsSection h2 {
+  margin-bottom: 20px;
+}
+
+/* Grid layout for events */
+.eventsGrid {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Event Card */
+.eventCard {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  -webkit-transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+  transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+  text-align: left;
+}
+
+.eventCard:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Event Title */
+.eventTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Event Date */
+.eventDate {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Event Description */
+.eventDescription {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Friends List */
+.friendsList {
+  width: 100%;
+  margin: 20px 0;
+  padding-top: 20px;
+  border-top: 1px solid grey;
+  text-align: center;
+}
+
+.friendsList ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* Friend Card */
+.friendCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+.friendCard:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.friendImage {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.friendName {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .eventsGrid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+  .friendCard {
+    width: 80px;
+  }
+  .friendImage {
+    width: 50px;
+    height: 50px;
+  }
+}
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .eventsGrid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}

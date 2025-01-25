@@ -1,0 +1,17 @@
+/* _conceptPage.module.css */
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1rem 1fr 1rem 1fr 1rem 1fr;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 1rem; /* Space between grid items */
+}
+
+.conceptsPage {
+  padding: 2rem;
+}
+
+.h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}

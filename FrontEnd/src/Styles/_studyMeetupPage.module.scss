@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh; // Full viewport height
+  }
+  
+  .formContainer {
+    flex: 1; // Take up 1/3 of the width
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f7f7f7;
+    border-right: 1px solid #ddd;
+  }
+  
+  .mapContainer {
+    flex: 2; // Take up 2/3 of the width
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

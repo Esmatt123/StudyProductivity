@@ -1,0 +1,89 @@
+# Node/Next.js related
+node_modules
+.next
+out
+build
+.npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# .NET related
+bin/
+obj/
+*.user
+*.userosscache
+*.suo
+*.dbmdl
+*.jfm
+*.pfx
+*.publishsettings
+
+# IDE/Editor folders
+.vs/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment files
+.env*
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Version control
+.git
+.gitignore
+.gitattributes
+
+# Docker
+Dockerfile*
+docker-compose*
+.docker
+
+# Testing
+coverage
+.nyc_output
+*.lcov
+testresults/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Misc
+README.md
+LICENSE
+*.md
+.editorconfig
+.prettierrc
+.eslintrc
+.eslintignore
+jest.config.js
+*.yaml
+*.yml
+!docker-compose.yml
+
+# Debug files
+*.pdb
+*.dll.config
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp

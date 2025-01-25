@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "configurations": [
+    {
+      "name": ".NET Core Launch (Web)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-api",
+      "program": "${workspaceFolder}/StudyProductivityApp.Api/bin/Debug/net7.0/StudyProductivityApp.Api.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/StudyProductivityApp.Api",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "launchBrowser": {
+        "enabled": true,
+        "args": "${auto-detect-url}",
+        "windows": {
+          "command": "cmd.exe",
+          "args": "/c start ${auto-detect-url}"
+        },
+        "osx": {
+          "command": "open",
+          "args": "${auto-detect-url}"
+        },
+        "linux": {
+          "command": "xdg-open",
+          "args": "${auto-detect-url}"
+        }
+      },
+      "requireExactSource": false
+    }
+  ]
+}

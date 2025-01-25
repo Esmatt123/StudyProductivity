@@ -1,0 +1,383 @@
+// Variables
+$primary-color: #4CAF50;
+$primary-hover: #45a049;
+$danger-color: #ff4444;
+$danger-hover: #cc0000;
+$warning-color: #ffbb33;
+$warning-hover: #ff8800;
+$success-color: #00C851;
+$success-hover: #007E33;
+$info-color: #33b5e5;
+$info-hover: #0099CC;
+$card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$modal-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+$transition: all 0.3s ease;
+
+// Mixins
+@mixin button-base {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: $transition;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+/* Define a base style for all buttons */
+.button-base {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Unique styles for each button */
+.updateButton {
+  @extend .button-base;
+  background: $warning-color;
+  color: white;
+
+  &:hover {
+    background: $warning-hover;
+    color: white;
+  }
+}
+
+.deleteButton {
+  @extend .button-base;
+  background: $danger-color;
+  color: white;
+
+  &:hover {
+    background: $danger-hover;
+    color: white;
+  }
+}
+
+.shareButton {
+  @extend .button-base;
+  background: $info-color;
+  color: white;
+
+  &:hover {
+    background: $info-hover;
+    color: white;
+  }
+}
+
+
+// Container styles
+.container {
+  padding: 2rem;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+  min-height: 100vh;
+}
+
+// Create button
+.createButton {
+  @include button-base;
+  background: $primary-color;
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  &::before {
+    content: '+';
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  &:hover {
+    background: $primary-hover;
+  }
+}
+
+// Document grid
+.documentGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+// Document card
+.documentCard {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: $transition;
+  box-shadow: $card-shadow;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+
+    .imageWrapper img {
+      transform: scale(1.05);
+    }
+  }
+
+  .imageWrapper {
+    position: relative;
+    overflow: hidden;
+
+    .image {
+      transition: $transition;
+    }
+  }
+
+  .cardTitle {
+    color: #333;
+    font-size: 1.2rem;
+    margin: 1rem;
+    font-weight: 600;
+  }
+
+  .cardDescription {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0.5rem 1rem;
+  }
+}
+
+// Button container
+.buttonContainer {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  justify-content: space-around;
+
+  .button {
+    @include button-base;
+    min-width: 80px;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+
+    &.update {
+      background: $warning-color;
+      color: white;
+
+      &:hover {
+        background: $warning-hover;
+      }
+    }
+
+    &.delete {
+      background: $danger-color;
+      color: white;
+
+      &:hover {
+        background: $danger-hover;
+      }
+    }
+
+    &.share {
+      background: $info-color;
+      color: white;
+
+      &:hover {
+        background: $info-hover;
+      }
+    }
+  }
+}
+
+// Modal
+// Modal styles
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+
+  .modalContent {
+    background: #ffffff;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease;
+    position: relative;
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .modalInput {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      color: #555;
+      outline: none;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: $primary-color;
+        box-shadow: 0 0 4px rgba($primary-color, 0.3);
+      }
+    }
+
+    .modalButtons {
+      display: flex;
+      gap: 1rem;
+      justify-content: space-around;
+
+      .confirmButton {
+        @include button-base;
+        background: $primary-color;
+        color: white;
+
+        &:hover {
+          background: $primary-hover;
+        }
+      }
+
+      .cancelButton {
+        @include button-base;
+        background: $danger-color;
+        color: white;
+
+        &:hover {
+          background: $danger-hover;
+        }
+      }
+    }
+
+    .checkboxContainer {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 1rem 0;
+
+      p {
+        font-size: 1rem;
+        color: #555;
+      }
+
+      input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        accent-color: $primary-color;
+      }
+    }
+
+    .closeButton {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      color: #888;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $danger-color;
+      }
+    }
+  }
+}
+
+// Keyframe animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+// Loading and error states
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.error {
+  background: #fff3f3;
+  color: $danger-color;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  border-left: 4px solid $danger-color;
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.confirmButton {
+  @include button-base;
+  background: $success-color;
+  color: white;
+
+  &:hover {
+    background: $success-hover;
+  }
+}
+
+.cancelButton {
+  @include button-base;
+  background: #eee;
+  color: #666;
+
+  &:hover {
+    background: #ddd;
+  }
+}

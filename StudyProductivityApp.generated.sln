@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyProductivityApp.Api", "StudyProductivityApp.Api\StudyProductivityApp.Api.csproj", "{C139CC18-F259-4FBC-81C3-43FD030A72BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyProductivityApp.Application", "StudyProductivityApp.Application\StudyProductivityApp.Application.csproj", "{680316D7-629A-4A4E-A9D7-578EEF2B0B9D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyProductivityApp.Core", "StudyProductivityApp.Core\StudyProductivityApp.Core.csproj", "{34DA9981-3A15-40AE-8182-0F5EC1D19FDC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyProductivityApp.Infrastructure", "StudyProductivityApp.Infrastructure\StudyProductivityApp.Infrastructure.csproj", "{089931CE-2D74-4C48-A9B0-1442CA8C5DD9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyProductivityApp.Persistence", "StudyProductivityApp.Persistence\StudyProductivityApp.Persistence.csproj", "{43B2319F-799C-4097-B706-D1609FECB460}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyProductivityApp.Persistence.Tests", "StudyProductivityApp.Persistence.Tests\StudyProductivityApp.Persistence.Tests.csproj", "{4CA48CB3-35EE-4C87-A194-BC54BDC45007}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C139CC18-F259-4FBC-81C3-43FD030A72BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C139CC18-F259-4FBC-81C3-43FD030A72BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C139CC18-F259-4FBC-81C3-43FD030A72BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C139CC18-F259-4FBC-81C3-43FD030A72BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{680316D7-629A-4A4E-A9D7-578EEF2B0B9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{680316D7-629A-4A4E-A9D7-578EEF2B0B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{680316D7-629A-4A4E-A9D7-578EEF2B0B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{680316D7-629A-4A4E-A9D7-578EEF2B0B9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34DA9981-3A15-40AE-8182-0F5EC1D19FDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34DA9981-3A15-40AE-8182-0F5EC1D19FDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34DA9981-3A15-40AE-8182-0F5EC1D19FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34DA9981-3A15-40AE-8182-0F5EC1D19FDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{089931CE-2D74-4C48-A9B0-1442CA8C5DD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{089931CE-2D74-4C48-A9B0-1442CA8C5DD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{089931CE-2D74-4C48-A9B0-1442CA8C5DD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{089931CE-2D74-4C48-A9B0-1442CA8C5DD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43B2319F-799C-4097-B706-D1609FECB460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43B2319F-799C-4097-B706-D1609FECB460}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43B2319F-799C-4097-B706-D1609FECB460}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43B2319F-799C-4097-B706-D1609FECB460}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CA48CB3-35EE-4C87-A194-BC54BDC45007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CA48CB3-35EE-4C87-A194-BC54BDC45007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CA48CB3-35EE-4C87-A194-BC54BDC45007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CA48CB3-35EE-4C87-A194-BC54BDC45007}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2032A333-71DD-4672-B8D6-362E541154A4}
+	EndGlobalSection
+EndGlobal

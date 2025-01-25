@@ -1,0 +1,115 @@
+.resultsPage {
+  font-family: Arial, sans-serif;
+  padding: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #f4f7fc;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-wrap: break-word;
+  /* Ensure text wraps within the container */
+}
+
+.pageTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.quizTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.scoreContainer {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.score {
+  font-size: 1.3rem;
+  color: #5a5a5a;
+  font-weight: bold;
+}
+
+.questionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.question {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.questionText {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+  word-wrap: break-word;
+  /* Break long words to wrap within the container */
+  overflow-wrap: break-word;
+  /* Ensure text wraps within the container */
+  word-break: break-word;
+  /* Break long words to wrap within the container */
+}
+
+.answersContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-wrap: break-word; /* Ensure text wraps within the container */
+}
+
+.answer {
+  padding: 10px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  word-wrap: break-word;
+  /* Break long words to wrap within the container */
+  overflow-wrap: break-word;
+  /* Ensure text wraps within the container */
+  word-break: break-word;
+  /* Break long words to wrap within the container */
+}
+
+.correctAnswer {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+}
+
+.correctUnselectedAnswer {
+  background-color: #87e18a;
+  color: white;
+  font-weight: bold;
+}
+
+.incorrectAnswer {
+  background-color: #f44336;
+  color: white;
+  font-weight: bold;
+}
+
+.answer:hover {
+  transform: translateY(-2px);
+}
+
+.answer.correctAnswer:hover {
+  background-color: #45a049;
+  /* Darker green on hover for selected correct answer */
+}
+
+.answer.incorrectAnswer:hover {
+  background-color: #e53935;
+  /* Darker red on hover for selected incorrect answer */
+}

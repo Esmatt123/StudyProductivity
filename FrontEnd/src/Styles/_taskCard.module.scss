@@ -1,0 +1,152 @@
+/* Basic task card styling */
+.task-card {
+  background-color: #fff;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: move;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-card p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.task-card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.task-card button:hover {
+  background-color: #0056b3;
+}
+
+.task-card button:focus {
+  outline: none;
+}
+
+/* Styles for the dragging state */
+.task-card.dragging {
+  opacity: 0.5;
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.draggableItem {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  height: fit-content;
+  background-color: #0056b3;
+  position: relative;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  justify-content: space-between;
+
+  
+}
+
+
+.taskCardButtons {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  gap: 3px;
+}
+
+.editButton {
+  background-color: #dfd222;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.deleteButton {
+  background-color: #e72828;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.editButton:hover {
+  background-color: #c8bc1e;
+}
+
+.deleteButton:hover {
+  background-color: #c32121;
+}
+
+.saveButton {
+  background-color: #004085;
+  border: none;
+  border-radius: 5px;
+}
+
+.cancelButton {
+  background-color: #dc3545;
+  border: none;
+  border-radius: 5px;
+}
+
+.editForm {
+  border-radius: 5px;
+
+  input {
+    border: none;
+    background-color: #dedbdb;
+    border-radius: 5px;
+    margin-bottom: 2px;
+  }
+
+  textarea {
+    border: none;
+    background-color: #dedbdb;
+    border-radius: 5px;
+  }
+}
+
+.editFormButtons {
+  border-radius: 5px;
+}
+
+.saveButton {
+  background-color: #004085;
+}
+
+.saveButton:hover {
+  background-color: #003064;
+  cursor: pointer;
+}
+
+.cancelButton {
+  background-color: #dc3545;
+}
+
+.cancelButton:hover {
+  background-color: #af2936;
+  cursor: pointer;
+}
+
+.toggleButton {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggleButton:hover {
+  opacity: 0.8;
+}

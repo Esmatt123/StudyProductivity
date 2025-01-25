@@ -1,0 +1,38 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid black;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.mainLayout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.mainContent {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+
+
+
+.main-body{
+  border: 1px solid pink;
+  width: 100%;
+  background-color: pink;
+  height: 100%;
+  display: flex;
+}

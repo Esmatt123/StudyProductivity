@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "BpoD5XlI9LyGKyWO9qrSf2YPDbvMPdSmNiiXjdDS95Q=",
+  "Source": "StudyProductivityApp.Api",
+  "BasePath": "_content/StudyProductivityApp.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "StudyProductivityApp.Api\\wwwroot",
+      "Source": "StudyProductivityApp.Api",
+      "ContentRoot": "C:\\Users\\esmat\\StudyProductivityApp\\studyproductivityapp.api\\wwwroot\\",
+      "BasePath": "_content/StudyProductivityApp.Api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

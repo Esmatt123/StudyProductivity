@@ -1,0 +1,325 @@
+/* Basic styling for Todo Page */
+.todoPage {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+
+    .taskContainer{
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 10px;
+      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .todoPage {
+      padding: 10px;
+    }
+  
+    .taskContainer {
+      flex-direction: column;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  
+    .list {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  
+    .headerContainer {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .listInput {
+      width: 100%;
+    }
+  
+    .addListButton {
+      width: 100%;
+    }
+  
+    .addTaskForm {
+      width: 90%;
+      max-width: none;
+      
+    }
+  }
+
+  .taskList{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-height: 100px; /* Ensures there's always a drop target */
+    padding: 10px;
+  }
+  
+  .h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Input styles for adding new list and task */
+  .input[type="text"], .textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .textarea {
+    resize: vertical;
+  }
+  
+  .button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  .button:focus {
+    outline: none;
+  }
+  
+  /* Styles for the task list section */
+  .list {
+    background-color: #5d88f5;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: fit-content;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .list h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .delete {
+    background-color: #dc3545;
+    padding: 5px 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .delete:hover {
+    background-color: #c82333;
+  }
+  
+  /* Styling for the tasks inside each list */
+  .tasks {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Add Task button */
+  .addTaskBtn {
+    background-color: #28a745;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .addTaskBtn:hover {
+    background-color: #218838;
+  }
+  
+  /* Add Task Form */
+  .addTaskForm {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: fit-content;
+    gap: 5px;
+  }
+  
+  .addTaskForm .input,
+  .addTaskForm .textarea {
+    margin-bottom: 10px;
+  }
+  
+  .addTaskForm button {
+    width: 100%;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  
+  
+  /* Drag-and-drop task cards styling */
+  .taskCard {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: grab;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .taskCard:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .taskCard.dragging {
+    opacity: 0.5;
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Task card buttons */
+  .taskCard .button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .taskCard .button:hover {
+    background-color: #c82333;
+  }
+  
+  .taskItemContainer{
+    background-color: #0056b3;
+    border-radius: 5px;
+    padding: 2px;
+  }
+
+  .listInput {
+    width: 300px; /* Adjust width as needed */
+    padding: 10px; /* Add some padding for better usability */
+    font-size: 16px; /* Make text more readable */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 5px; /* Rounded corners */
+    outline: none; /* Remove default focus outline */
+    transition: border-color 0.3s ease; /* Smooth transition on focus */
+  }
+  
+  .listInput:focus {
+    border-color: #007bff; /* Highlight border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a glow effect */
+  }
+  
+  .addListButton {
+    padding: 10px 20px; /* Add padding for better usability */
+    font-size: 16px; /* Match font size with input */
+    color: white; /* Button text color */
+    background-color: #007bff; /* Primary blue background */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor for clickable button */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+    -webkit-tap-highlight-color: transparent;
+    
+  }
+  
+  .addListButton:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+  .addListButton:active {
+    background-color: #004085; /* Even darker on click */
+  }
+  
+  .addButton{
+    background-color: #218838;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .addButton:hover{
+    background-color: #218838;
+  }
+  .saveButton{
+    background-color: #004085;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .saveButton:hover{
+    background-color: #003064;
+    cursor: pointer;
+  }
+  .cancelButton{
+    background-color: #dc3545;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .cancelButton:hover{
+    background-color: #af2936;
+  }
+   
+
+  /* Add to your existing CSS */
+.isOver {
+  background-color: rgba(0, 123, 255, 0.1) !important;
+  transform: scale(1.02);
+  transition: all 0.2s ease;
+}
+
+.emptyListPlaceholder {
+  text-align: center;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Improve scrolling on mobile */
+.taskContainer::-webkit-scrollbar {
+  height: 8px;
+}
+
+.taskContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.taskContainer::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+

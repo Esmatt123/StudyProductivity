@@ -1,0 +1,114 @@
+.fileItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  width: 200px;
+  margin: 15px;
+}
+
+.fileItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.fileIcon {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.fileIcon:hover {
+  transform: scale(1.1);
+}
+
+.fileName {
+  font-size: 16px;
+  color: #4a4a4a;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 180px;
+}
+
+.downloadButton,
+.deleteButton,
+.shareButton {
+  padding: 8px 16px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.downloadButton {
+  background-color: #18b300;
+  color: white;
+}
+
+.downloadButton:hover {
+  background-color: #149800;
+  transform: translateY(-3px);
+}
+
+.deleteButton {
+  background-color: #ee4f4f;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: #d94343;
+  transform: translateY(-3px);
+}
+
+.shareButton {
+  background-color: #0056b3;
+  color: white;
+}
+
+.shareButton:hover {
+  background-color: #00408d;
+  transform: translateY(-3px);
+}
+
+.scrollableDropdown {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.scrollableDropdown select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.scrollableDropdown button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.scrollableDropdown button:hover {
+  background-color: #0056b3;
+}
