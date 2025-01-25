@@ -32,21 +32,45 @@ jobs:
         username: ${{ secrets.ACR_USERNAME }}
         password: ${{ secrets.ACR_PASSWORD }}
 
-    # Login to Azure (needed for Web App deployment)
+    # Login to Azure
     - name: Azure Login
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    # Deploy to Azure Web Apps
+    # Deploy Frontend
     - name: Deploy Frontend
       uses: azure/webapps-deploy@v2
       with:
         app-name: studyproductivityapp-frontend
         images: studyprodcontainerregister.azurecr.io/frontend:latest
 
+    # Deploy Backend
     - name: Deploy Backend
       uses: azure/webapps-deploy@v2
       with:
         app-name: studyproductivityapp-backend
         images: studyprodcontainerregister.azurecr.io/backend:latest
+
+    # Verify Backend Deployment
+    - name: Verify Backend Deployment
+      run: |
+        echo "Waiting for backend to start..."
+        sleep 30  # Give the app some time to start
+        curl -s -o /dev/null -w "%{http_code}" https://studyproductivityapp-backend-bpc4cxfhctgqgeev.polandcentral-01.azurewebsites.net/health
+
+    # Configure Backend App Settings
+    - name: Configure Backend App Settings
+      run: |
+        az webapp config appsettings set --name studyproductivityapp-backend --resource-group your-resource-group --settings \
+          AZURE_TENANT_ID="${{ secrets.AZURE_TENANT_ID }}" \
+          AZURE_CLIENT_ID="${{ secrets.AZURE_CLIENT_ID }}" \
+          AZURE_CLIENT_SECRET="${{ secrets.AZURE_CLIENT_SECRET }}" \
+          KEY_VAULT_URL="${{ secrets.KEY_VAULT_URL }}" \
+          WEBSITES_PORT=5193
+
+    # Restart Apps after configuration
+    - name: Restart Apps
+      run: |
+        az webapp restart --name studyproductivityapp-backend --resource-group your-resource-group
+        az webapp restart --name studyproductivityapp-frontend --resource-group your-resource-group

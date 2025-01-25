@@ -61,7 +61,14 @@ jobs:
         password: ${{ secrets.ACR_PASSWORD }}
 
     # Build and push containers
+    # In CI workflow, under build job
+    # Build and push containers
     - name: Build and push containers
+      env:
+        AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+        AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+        AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+        KEY_VAULT_URL: ${{ secrets.KEY_VAULT_URL }}
       run: |
         docker compose build
         docker compose push
