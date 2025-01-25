@@ -15,6 +15,22 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    # Set up Docker Compose
+    - name: Set up Docker Compose
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y docker-compose-plugin
+        docker compose version
+
+    # Cache Docker layers
+    - name: Cache Docker layers
+      uses: actions/cache@v2
+      with:
+        path: /tmp/.buildx-cache
+        key: ${{ runner.os }}-buildx-${{ github.sha }}
+        restore-keys: |
+          ${{ runner.os }}-buildx-
+
     # Login to Docker Registry
     - name: Login to Container Registry
       uses: docker/login-action@v2
@@ -26,8 +42,14 @@ jobs:
     # Build and push to ACR
     - name: Build and push containers
       run: |
-        docker-compose build
-        docker-compose push
+        docker compose build
+        docker compose push
+
+    # Login to Azure (needed for Web App deployment)
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     # Deploy to Azure Web Apps
     - name: Deploy Frontend
@@ -39,5 +61,16 @@ jobs:
     - name: Deploy Backend
       uses: azure/webapps-deploy@v2
       with:
-        app-name: studyproductivityapp-backend-c7g8fed7c8ebhha4
+        app-name: studyproductivityapp-backend-bpc4cxfhctgqgeev
         images: studyprodcontainerregister.azurecr.io/backend:latest
+
+    # Optional: Add deployment verification
+    - name: Verify Frontend Deployment
+      run: |
+        echo "Verifying frontend deployment..."
+        curl -s -o /dev/null -w "%{http_code}" https://studyproductivityapp-frontend-c7g8fed7c8ebhha4.azurewebsites.net/
+
+    - name: Verify Backend Deployment
+      run: |
+        echo "Verifying backend deployment..."
+        curl -s -o /dev/null -w "%{http_code}" https://studyproductivityapp-backend-bpc4cxfhctgqgeev.azurewebsites.net/health
