@@ -51,19 +51,39 @@ jobs:
       with:
         app-name: studyproductivityapp-backend
         images: studyprodcontainerregister.azurecr.io/backend:latest
+        configuration-file: docker-compose.yml
 
-    # Configure Backend App Settings
-        # Configure Backend App Settings
-    - name: Configure Backend App Settings
+    # Configure Backend Container Settings
+    - name: Configure Backend Container Settings
       run: |
-        az webapp config appsettings set --name studyproductivityapp-backend --resource-group studyproductivity --settings \
-          AZURE_TENANT_ID="${{ secrets.AZURE_TENANT_ID }}" \
-          AZURE_CLIENT_ID="${{ secrets.AZURE_CLIENT_ID }}" \
-          AZURE_CLIENT_SECRET="${{ secrets.AZURE_CLIENT_SECRET }}" \
-          KEY_VAULT_URL="${{ secrets.KEY_VAULT_URL }}" \
-          WEBSITES_PORT=5193
+        az webapp config container set \
+          --name studyproductivityapp-backend \
+          --resource-group studyproductivity \
+          --docker-custom-image-name studyprodcontainerregister.azurecr.io/backend:latest \
+          --docker-registry-server-url https://studyprodcontainerregister.azurecr.io \
+          --docker-registry-server-user ${{ secrets.ACR_USERNAME }} \
+          --docker-registry-server-password ${{ secrets.ACR_PASSWORD }}
 
-    # Restart Apps after configuration
+        az webapp config appsettings set \
+          --name studyproductivityapp-backend \
+          --resource-group studyproductivity \
+          --settings \
+            DOCKER_ENABLE_CI=true \
+            DOCKER_REGISTRY_SERVER_URL=studyprodcontainerregister.azurecr.io \
+            WEBSITES_PORT=5193 \
+            WEBSITES_CONTAINER_START_TIME_LIMIT=1800 \
+            AZURE_TENANT_ID="${{ secrets.AZURE_TENANT_ID }}" \
+            AZURE_CLIENT_ID="${{ secrets.AZURE_CLIENT_ID }}" \
+            AZURE_CLIENT_SECRET="${{ secrets.AZURE_CLIENT_SECRET }}" \
+            KEY_VAULT_URL="${{ secrets.KEY_VAULT_URL }}"
+
+        az webapp config container set \
+          --name studyproductivityapp-backend \
+          --resource-group studyproductivity \
+          --multicontainer-config-type compose \
+          --multicontainer-config-file docker-compose.yml
+
+    # Restart Apps
     - name: Restart Apps
       run: |
         az webapp restart --name studyproductivityapp-backend --resource-group studyproductivity

@@ -19,8 +19,9 @@ services:
     ports:
       - "5193:5193"
     environment:
-      - AZURE_TENANT_ID=${AZURE_TENANT_ID}
-      - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
-      - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
-      - KEY_VAULT_URL=${KEY_VAULT_URL}
+      - ASPNETCORE_ENVIRONMENT=Production
       - WEBSITES_PORT=5193
+      - AZURE_TENANT_ID
+      - AZURE_CLIENT_ID
+      - AZURE_CLIENT_SECRET
+      - KEY_VAULT_URL
