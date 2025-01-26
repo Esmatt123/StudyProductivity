@@ -63,17 +63,18 @@ jobs:
     # Build and push containers
     # In CI workflow, under build job
     # Build and push containers
+    # Build and push containers
     - name: Build and push containers
-  env:
-    AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-    AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-    AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-    KEY_VAULT_URL: ${{ secrets.KEY_VAULT_URL }}
-  run: |
-    echo "Building with environment variables..."
-    docker compose build \
-      --build-arg AZURE_TENANT_ID=${{ secrets.AZURE_TENANT_ID }} \
-      --build-arg AZURE_CLIENT_ID=${{ secrets.AZURE_CLIENT_ID }} \
-      --build-arg AZURE_CLIENT_SECRET=${{ secrets.AZURE_CLIENT_SECRET }} \
-      --build-arg KEY_VAULT_URL=${{ secrets.KEY_VAULT_URL }}
-    docker compose push
+      env:
+        AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+        AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+        AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+        KEY_VAULT_URL: ${{ secrets.KEY_VAULT_URL }}
+      run: |
+        echo "Building with environment variables..."
+        docker compose build \
+          --build-arg AZURE_TENANT_ID=${{ secrets.AZURE_TENANT_ID }} \
+          --build-arg AZURE_CLIENT_ID=${{ secrets.AZURE_CLIENT_ID }} \
+          --build-arg AZURE_CLIENT_SECRET=${{ secrets.AZURE_CLIENT_SECRET }} \
+          --build-arg KEY_VAULT_URL=${{ secrets.KEY_VAULT_URL }}
+        docker compose push
