@@ -10,6 +10,7 @@ services:
       - "3000:3000"
     environment:
       - NEXT_PUBLIC_BACKEND_URL=https://studyproductivityapp-backend.azurewebsites.net
+      - TEST_VAR=thisisatest
     depends_on:
       - backend
 
@@ -34,6 +35,7 @@ services:
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
       - KEY_VAULT_URL=${KEY_VAULT_URL}
+      - TEST_VAR=Thisisabackendtest
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5193/health"]
       interval: 30s

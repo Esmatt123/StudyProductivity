@@ -325,6 +325,7 @@ builder.Services.AddCors(options =>
 });
 
 var secret = builder.Configuration["DefaultConnection"];
+Console.WriteLine("TEST BACKEND VAR: ", Environment.GetEnvironmentVariable("TEST_VAR"));
 
 // Build and configure the application
 var app = builder.Build();
