@@ -18,3 +18,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5193:5193"
+    environment:
+      - AZURE_TENANT_ID=${AZURE_TENANT_ID}
+      - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
+      - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
+      - KEY_VAULT_URL=${KEY_VAULT_URL}
+      - WEBSITES_PORT=5193
