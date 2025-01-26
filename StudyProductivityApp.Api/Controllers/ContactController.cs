@@ -157,4 +157,3 @@ namespace StudyProductivityApp.Api.Controllers
     }
 }
 
-//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
