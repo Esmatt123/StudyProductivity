@@ -25,7 +25,7 @@ jobs:
     - name: Run Frontend Tests
       working-directory: ./FrontEnd
       env:
-        NEXT_PUBLIC_VITE_BACKEND_URL: studyproductivityapp-backend-bpc4cxfhctgqgeev.polandcentral-01.azurewebsites.net
+        NEXT_PUBLIC_VITE_BACKEND_URL: https://studyproductivityapp-backend.azurewebsites.net
       run: npm test
 
     # Backend Tests

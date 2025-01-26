@@ -4,10 +4,12 @@ services:
   frontend:
     image: studyprodcontainerregister.azurecr.io/frontend:latest
     build:
-      context: .
-      dockerfile: FrontEnd/Dockerfile
+      context: ./FrontEnd  # Change this line to point to the FrontEnd directory
+      dockerfile: Dockerfile  # Update this line as the Dockerfile is now relative to the FrontEnd directory
     ports:
       - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_BACKEND_URL=https://studyproductivityapp-backend.azurewebsites.net
     depends_on:
       - backend
 
@@ -16,12 +18,25 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:  
+        - AZURE_TENANT_ID=${AZURE_TENANT_ID}
+        - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
+        - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
+        - KEY_VAULT_URL=${KEY_VAULT_URL}
     ports:
       - "5193:5193"
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:5193
+      - DOTNET_URLS=http://+:5193
       - WEBSITES_PORT=5193
       - AZURE_TENANT_ID=${AZURE_TENANT_ID}
       - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
       - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
       - KEY_VAULT_URL=${KEY_VAULT_URL}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5193/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

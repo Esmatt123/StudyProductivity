@@ -308,7 +308,6 @@ builder.Services
     .AddMutationType<Mutation>()
     .ModifyRequestOptions(opt => opt.IncludeExceptionDetails = builder.Environment.IsDevelopment());
 
-
 // Configure CORS
 builder.Services.AddCors(options =>
 {
@@ -317,8 +316,7 @@ builder.Services.AddCors(options =>
         {
             builder
                 .WithOrigins(
-                    "https://studyproductivityapp-backend-bpc4cxfhctgqgeev.polandcentral-01.azurewebsites.net",
-                    "https://studyproductivityapp-frontend-c7g8fed7c8ebhha4.polandcentral-01.azurewebsites.net"
+                    "https://studyproductivityapp-frontend.azurewebsites.net"
                 )
                 .AllowAnyHeader()
                 .AllowAnyMethod()
@@ -330,19 +328,33 @@ var secret = builder.Configuration["DefaultConnection"];
 
 // Build and configure the application
 var app = builder.Build();
-app.MapHealthChecks("/health");
+
+// Configure middleware in correct order
 app.UseXContentTypeOptions();
 app.UseReferrerPolicy(opt => opt.NoReferrer());
 app.UseXXssProtection(opt => opt.EnabledWithBlockMode());
 app.UseXfo(opt => opt.Deny());
-app.UseCspReportOnly(opt => opt.BlockAllMixedContent()
-.StyleSources(s => s.Self().CustomSources("https://fonts.googleapis.com"))
-.FontSources(s => s.Self().CustomSources("https://fonts.gstatic.com", "data:"))
-.FormActions(s => s.Self())
-.FrameAncestors(s => s.Self())
-.ImageSources(s => s.Self().CustomSources("blob:"))
-.ScriptSources(s => s.Self()));
+app.UseCspReportOnly(opt => opt
+    .BlockAllMixedContent()
+    .StyleSources(s => s.Self().CustomSources("https://fonts.googleapis.com"))
+    .FontSources(s => s.Self().CustomSources("https://fonts.gstatic.com", "data:"))
+    .FormActions(s => s.Self())
+    .FrameAncestors(s => s.Self())
+    .ImageSources(s => s.Self().CustomSources("blob:"))
+    .ScriptSources(s => s.Self())
+);
 
+// CORS should be one of the first middleware
+app.UseCors("AllowAll");
+
+// Static files and HTTPS redirection
+app.UseStaticFiles();
+app.UseHttpsRedirection();
+
+// Authentication and Authorization
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
 
 if (app.Environment.IsDevelopment())
 {
@@ -355,22 +367,21 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+// Health check endpoint
+app.MapGet("/health", () =>
+{
+    Console.WriteLine("Health check called");
+    return Results.Ok("Healthy");
+});
 
-
-// Use HTTPS redirection, routing, and authentication
-app.UseStaticFiles();
-app.UseHttpsRedirection();
-app.UseRouting();
-app.UseAuthentication();
-app.UseAuthorization();
-app.UseCors("AllowAll");
-
-
-// Map endpoints
+// Map other endpoints
 app.MapGraphQL();
 app.MapHub<DocumentHub>("/hubs/document");
 app.MapHub<ChatHub>("/hubs/chat");
 app.MapControllers();
 
-// Run the application
+// Ensure we're listening on all interfaces
+app.Urls.Add($"http://*:5193");
+
+// Run the application (only once)
 await app.RunAsync();

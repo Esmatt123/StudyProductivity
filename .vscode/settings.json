@@ -1,1 +1,139 @@
-{}
+{
+    // Terminal Profiles
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell",
+            "args": ["-NoLogo"]
+        },
+        "Azure CLI": {
+            "path": "C:\\Program Files\\Microsoft SDKs\\Azure\\CLI2\\wbin\\az.cmd",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        }
+    },
+
+    // Default Terminal Profile
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+
+    // Environment Variables and PATH
+    "terminal.integrated.env.windows": {
+        "PATH": "${env:PATH};C:\\Program Files\\Microsoft SDKs\\Azure\\CLI2\\wbin;C:\\Program Files\\dotnet;C:\\Program Files\\nodejs;${env:USERPROFILE}\\AppData\\Roaming\\npm;${env:ProgramFiles}\\dotnet;${env:ProgramFiles(x86)}\\dotnet"
+    },
+
+    // Editor Settings
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [80, 120],
+    "editor.tabSize": 2,
+    "editor.detectIndentation": true,
+    "editor.suggestSelection": "first",
+
+    // File Associations
+    "files.associations": {
+        "*.json": "jsonc",
+        "*.cshtml": "html",
+        "*.tsx": "typescriptreact"
+    },
+
+    // Language Specific Settings
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2
+    },
+    "[csharp]": {
+        "editor.defaultFormatter": "ms-dotnettools.csharp",
+        "editor.tabSize": 4
+    },
+
+    // .NET Settings
+    "dotnet.defaultSolution": "YourSolution.sln",
+    "omnisharp.enableRoslynAnalyzers": true,
+    "omnisharp.enableEditorConfigSupport": true,
+
+    // Node.js Settings
+    "npm.enableScriptExplorer": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+
+    // Azure Settings
+    "azure.resourceFilter": [],
+    "azureFunctions.deploySubpath": ".",
+    "azureFunctions.projectLanguage": "C#",
+    "azureFunctions.projectRuntime": "~4",
+
+    // Git Settings
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+
+    // Terminal Settings
+    "terminal.integrated.gpuAcceleration": "on",
+    "terminal.integrated.shellIntegration.enabled": true,
+    "terminal.integrated.persistentSessionReviveProcess": "never",
+    "terminal.integrated.tabs.enabled": true,
+
+    // File Handling
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/bin": true,
+        "**/obj": true,
+        "**/node_modules": true
+    },
+
+    // Search Settings
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/dist": true,
+        "**/coverage": true
+    },
+
+    // Workbench Settings
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.editor.enablePreview": false,
+
+    // Extensions
+    "extensions.ignoreRecommendations": false,
+
+    // Recommended Extensions Configuration
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "es5",
+    "prettier.printWidth": 80,
+
+    // Debug Settings
+    "debug.internalConsoleOptions": "neverOpen",
+    "debug.toolBarLocation": "docked",
+
+    // Telemetry Settings
+    "telemetry.telemetryLevel": "off",
+
+    // Performance Settings
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/**": true,
+        "**/env/**": true,
+        "**/venv/**": true,
+        "**/.hg/store/**": true
+    }
+}

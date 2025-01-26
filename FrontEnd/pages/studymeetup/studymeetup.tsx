@@ -3,7 +3,7 @@ import MeetupMap from '../../src/Components/MeetupMap';
 import EventForm from '../../src/Components/EventForm';
 import styles from '../../src/Styles/_studyMeetupPage.module.css';
 
-export const MAPBOX_ACCESS_TOKEN = process.env.NEXT_PUBLIC_VITE_MAPBOX_API_KEY;
+export const MAPBOX_ACCESS_TOKEN = "pk.eyJ1IjoiZXNtYXR0IiwiYSI6ImNtMWhseTVvcTAyZTUycnF1c2wyZ2ZwbWcifQ.63FyWCaFdybdwI9o8MJafA";
 
 const StudyMeetupPage = () => {
   const [coordinates, setCoordinates] = useState<{ lng: number; lat: number }>({ lng: -74.5, lat: 40 });

@@ -1,7 +1,7 @@
 import { gql, useQuery, ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
 import fetch from 'cross-fetch'
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_VITE_BACKEND_URL;
+const BACKEND_URL = "https://studyproductivityapp-backend.azurewebsites.net";
 // Define the GraphQL endpoint
 const GRAPHQL_ENDPOINT = `${BACKEND_URL}/graphql`; // Adjust to your actual endpoint
 

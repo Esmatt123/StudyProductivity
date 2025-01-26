@@ -11,6 +11,7 @@ const HomePage: FunctionComponent = () => {
         <h1 className={styles.title}>Boost Your Study Productivity</h1>
         <h4 className={styles.subtitle}>Achieve more with less effort using my app.</h4>
         <p className={styles.subtitle}>Just click login! Try sally@example.com or ted@example.com also!</p>
+        <p className={styles.subtitle}>Update has been made</p>
         
         {/* Login Form */}
         <div className={styles.loginFormContainer}>
