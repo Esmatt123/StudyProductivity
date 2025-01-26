@@ -71,10 +71,5 @@ jobs:
         AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
         KEY_VAULT_URL: ${{ secrets.KEY_VAULT_URL }}
       run: |
-        echo "Building with environment variables..."
-        docker compose build \
-          --build-arg AZURE_TENANT_ID=${{ secrets.AZURE_TENANT_ID }} \
-          --build-arg AZURE_CLIENT_ID=${{ secrets.AZURE_CLIENT_ID }} \
-          --build-arg AZURE_CLIENT_SECRET=${{ secrets.AZURE_CLIENT_SECRET }} \
-          --build-arg KEY_VAULT_URL=${{ secrets.KEY_VAULT_URL }}
+        docker compose build
         docker compose push
