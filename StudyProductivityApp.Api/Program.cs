@@ -35,30 +35,21 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions
     WebRootPath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")
 });
 
-var logger = LoggerFactory.Create(builder => 
-{
-    builder
-        .AddConsole()
-        .AddDebug()
-        .SetMinimumLevel(LogLevel.Information);
-}).CreateLogger<Program>();
 
-var keyVaultUrl = Environment.GetEnvironmentVariable("KEY_VAULT_URL");
+var keyVaultUrl = "https://studyproductivitysecrets.vault.azure.net/";
 
 var credential = new ClientSecretCredential(
-    tenantId: Environment.GetEnvironmentVariable("AZURE_TENANT_ID"),
-    clientId: Environment.GetEnvironmentVariable("AZURE_CLIENT_ID"),
-    clientSecret: Environment.GetEnvironmentVariable("AZURE_CLIENT_SECRET"),
+    tenantId: "475de0f8-5bba-4360-8afa-75a847badfc1",
+    clientId: "90e087ac-550f-4b1d-9cb3-555767b7b92f",
+    clientSecret: "Kgl8Q~Dn3jAStr108wpFoWwju6tn14xTXhcbmdBD",
     new TokenCredentialOptions
     {
         AuthorityHost = AzureAuthorityHosts.AzurePublicCloud
     }
 );
 
-logger.LogInformation($"TENANT ID: {Environment.GetEnvironmentVariable("AZURE_TENANT_ID")}");
-logger.LogInformation($"CLIENT ID: {Environment.GetEnvironmentVariable("AZURE_CLIENT_ID")}");
-logger.LogInformation($"GIT TEST: {Environment.GetEnvironmentVariable("GIT_TEST")}");
-logger.LogInformation($"APPSERVICE TEST: {Environment.GetEnvironmentVariable("APP_SERVICE_TEST")}");
+Console.WriteLine("TENANT ID: ", Environment.GetEnvironmentVariable("AZURE_TENANT_ID"));
+Console.WriteLine("CLIENT ID: ", Environment.GetEnvironmentVariable("AZURE_CLIENT_ID"));
 
 
 

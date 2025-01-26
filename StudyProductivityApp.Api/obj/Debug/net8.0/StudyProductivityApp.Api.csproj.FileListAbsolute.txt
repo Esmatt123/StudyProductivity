@@ -225,3 +225,4 @@ C:\Users\esmat\StudyProductivityApp\studyproductivityapp.api\bin\Debug\net8.0\Mi
 C:\Users\esmat\StudyProductivityApp\studyproductivityapp.api\bin\Debug\net8.0\Microsoft.Azure.SignalR.dll
 C:\Users\esmat\StudyProductivityApp\studyproductivityapp.api\bin\Debug\net8.0\Microsoft.Azure.SignalR.Protocols.dll
 C:\Users\esmat\StudyProductivityApp\studyproductivityapp.api\bin\Debug\net8.0\dotenv.net.dll
+C:\Users\esmat\StudyProductivityApp\studyproductivityapp.api\obj\Debug\net8.0\StudyProductivityApp.Api.sourcelink.json

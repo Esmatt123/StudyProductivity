@@ -10,3 +10,4 @@ C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Core\obj\Debug\net8.0\r
 C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Core\obj\Debug\net8.0\StudyProductivityApp.Core.pdb
 C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Core\obj\Debug\net8.0\ref\StudyProductivityApp.Core.dll
 C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Core\obj\Debug\net8.0\StudyProductivityApp.Core.csproj.AssemblyReference.cache
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Core\obj\Debug\net8.0\StudyProductivityApp.Core.sourcelink.json

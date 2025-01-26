@@ -15,3 +15,4 @@ C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Application\obj\Debug\n
 C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Application\obj\Debug\net8.0\ref\StudyProductivityApp.Application.dll
 C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Application\bin\Debug\net8.0\StudyProductivityApp.Persistence.dll
 C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Application\bin\Debug\net8.0\StudyProductivityApp.Persistence.pdb
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Application\obj\Debug\net8.0\StudyProductivityApp.Application.sourcelink.json

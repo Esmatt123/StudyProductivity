@@ -15,3 +15,4 @@ C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\obj\Debug\n
 C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\obj\Debug\net8.0\StudyProductivityApp.Persistence.pdb
 C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\obj\Debug\net8.0\StudyProductivityApp.Persistence.genruntimeconfig.cache
 C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\obj\Debug\net8.0\ref\StudyProductivityApp.Persistence.dll
+C:\Users\esmat\StudyProductivityApp\StudyProductivityApp.Persistence\obj\Debug\net8.0\StudyProductivityApp.Persistence.sourcelink.json
