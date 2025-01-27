@@ -39,17 +39,14 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 var keyVaultUrl = "https://studyproductivitysecrets.vault.azure.net/";
 
 var credential = new ClientSecretCredential(
-    tenantId: "475de0f8-5bba-4360-8afa-75a847badfc1",
-    clientId: "90e087ac-550f-4b1d-9cb3-555767b7b92f",
-    clientSecret: "Kgl8Q~Dn3jAStr108wpFoWwju6tn14xTXhcbmdBD",
+    tenantId: Environment.GetEnvironmentVariable("AZURE_TENANT_ID"),
+    clientId: Environment.GetEnvironmentVariable("AZURE_CLIENT_ID"),
+    clientSecret: Environment.GetEnvironmentVariable("AZURE_CLIENT_SECRET"),
     new TokenCredentialOptions
     {
         AuthorityHost = AzureAuthorityHosts.AzurePublicCloud
     }
 );
-
-Console.WriteLine("TENANT ID: ", Environment.GetEnvironmentVariable("AZURE_TENANT_ID"));
-Console.WriteLine("CLIENT ID: ", Environment.GetEnvironmentVariable("AZURE_CLIENT_ID"));
 
 
 
