@@ -15,28 +15,19 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    # Install Docker Compose
-    - name: Install Docker Compose
-      run: |
-        DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
-        mkdir -p $DOCKER_CONFIG/cli-plugins
-        curl -SL https://github.com/docker/compose/releases/download/v2.23.3/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
-        chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
-        docker compose version
+    # Login to Azure
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    # Login to Docker Registry
+    # Login to Container Registry
     - name: Login to Container Registry
       uses: docker/login-action@v2
       with:
         registry: studyprodcontainerregister.azurecr.io
         username: ${{ secrets.ACR_USERNAME }}
         password: ${{ secrets.ACR_PASSWORD }}
-
-    # Login to Azure
-    - name: Azure Login
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     # Deploy Frontend
     - name: Deploy Frontend
@@ -45,13 +36,22 @@ jobs:
         app-name: studyproductivityapp-frontend
         images: studyprodcontainerregister.azurecr.io/frontend:latest
 
+    # Configure Frontend Settings
+    - name: Configure Frontend Settings
+      run: |
+        az webapp config appsettings set \
+          --name studyproductivityapp-frontend \
+          --resource-group studyproductivity \
+          --settings \
+            NEXT_PUBLIC_BACKEND_URL="https://studyproductivityapp-backend.azurewebsites.net" \
+            WEBSITES_PORT=3000
+
     # Deploy Backend
     - name: Deploy Backend
       uses: azure/webapps-deploy@v2
       with:
         app-name: studyproductivityapp-backend
         images: studyprodcontainerregister.azurecr.io/backend:latest
-        configuration-file: docker-compose.yml
 
     # Configure Backend Container Settings
     - name: Configure Backend Container Settings
@@ -68,20 +68,18 @@ jobs:
           --name studyproductivityapp-backend \
           --resource-group studyproductivity \
           --settings \
-            DOCKER_ENABLE_CI=true \
-            DOCKER_REGISTRY_SERVER_URL=studyprodcontainerregister.azurecr.io \
+            ASPNETCORE_URLS="http://+:5193" \
+            DOTNET_URLS="http://+:5193" \
             WEBSITES_PORT=5193 \
-            WEBSITES_CONTAINER_START_TIME_LIMIT=1800 \
             AZURE_TENANT_ID="${{ secrets.AZURE_TENANT_ID }}" \
             AZURE_CLIENT_ID="${{ secrets.AZURE_CLIENT_ID }}" \
             AZURE_CLIENT_SECRET="${{ secrets.AZURE_CLIENT_SECRET }}" \
             KEY_VAULT_URL="${{ secrets.KEY_VAULT_URL }}"
 
-        az webapp config container set \
+        az webapp config set \
           --name studyproductivityapp-backend \
           --resource-group studyproductivity \
-          --multicontainer-config-type compose \
-          --multicontainer-config-file docker-compose.yml
+          --generic-configurations '{"startupTimeLimit": 600}'
 
     # Restart Apps
     - name: Restart Apps
